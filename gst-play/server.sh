@@ -1,0 +1,1 @@
+gst-launch-0.10 v4l2src device=/dev/video0 ! 'video/x-raw-rgb,width=800,height=600,depth=32' ! ffmpegcolorspace ! x264enc pass=qual quantizer=20 tune=zerolatency ! rtph264pay ! udpsink host=127.0.0.1 port=1234
